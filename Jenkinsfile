@@ -13,7 +13,7 @@ pipeline {
   stages {
     stage ('Validate configuration resources') {
       steps {
-        sh 'oc apply --dry-run --validate -k samples'
+        sh 'oc apply --dry-run --validate -k .'
         sh 'oc delete --dry-run -f delete'
       }
     }
